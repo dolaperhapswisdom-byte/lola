@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html lang="lo">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sting Energy Drink - ພະລັງງານສີເຫຼືອງ Gold Rush</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0b0c10;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            min-height: 100vh;
+            padding: 50px;
+            background: radial-gradient(circle, rgba(255,215,0,0.2) 0%, rgba(11,12,16,1) 70%);
+            flex-wrap: wrap;
+        }
+
+        .content {
+            max-width: 550px;
+            padding: 20px;
+        }
+
+        .brand-title {
+            font-size: 5.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: #ffd700; /* ສີເຫຼືອງທອງ */
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
+            line-height: 1;
+        }
+
+        .slogan {
+            font-size: 2.2rem;
+            margin: 15px 0;
+            color: #ffffff;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #c5c6c7;
+            margin-bottom: 35px;
+        }
+
+        .btn-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn-buy {
+            display: inline-block;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #0b0c10;
+            background-color: #ffd700;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .btn-buy:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(255, 215, 0, 0.7);
+            background-color: #fff;
+        }
+
+        /* ສ່ວນສະແດງຮູບພາບຜະລິດຕະພັນ */
+        .image-container {
+            position: relative;
+            padding: 20px;
+        }
+
+        .drink-image {
+            max-width: 100%;
+            height: auto;
+            width: 400px;
+            filter: drop-shadow(0 0 35px rgba(255, 215, 0, 0.6));
+            animation: float 4s ease-in-out infinite;
+        }
+
+        /* ເອັບເຟັກແສງໄຟດ້ານຫຼັງຮູບ */
+        .glow-effect {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 215, 0, 0.3);
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+        }
+
+        /* ເອັບເຟັກຮູບພາບລອຍໄປມາອານິເມຊັນ */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* ຮອງຮັບການສະແດງຜົນເທິງມືຖື */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding: 20px;
+            }
+            .brand-title {
+                font-size: 4rem;
+            }
+            .slogan {
+                font-size: 1.8rem;
+            }
+            .btn-container {
+                justify-content: center;
+            }
+            .drink-image {
+                width: 280px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <!-- ສ່ວນເນື້ອຫາໂຄສະນາ -->
+        <div class="content">
+            <h1 class="brand-title">STING</h1>
+            <p class="slogan">Gold Rush!</p>
+            <p class="description">ປົດປ່ອຍພະລັງງານສີເຫຼືອງອຳພັນໃຫ້ເຕັມພິກັດ! ສຳຜັດຄວາມຊ່າສະເພາະຕົວ ພ້ອມວິຕາມິນ B ແລະ ທາດອາຫານທີ່ຊ່ວຍເຕີມຄວາມສົດຊື່ນ ກະຕຸ້ນຄວາມຕື່ນຕົວໃຫ້ຮ່າງກາຍຂອງທ່ານພ້ອມລຸຍທຸກສິ່ງທ້າທາຍຕະຫຼອດມື້.</p>
+            
+            <div class="btn-container">
+                <a href="#" class="btn-buy">ລິ້ມລອງເລີຍ</a>
+            </div>
+        </div>
+
+        <!-- ສ່ວນສະແດງຮູບພາບຜະລິດຕະພັນ -->
+        <div class="image-container">
+            <div class="glow-effect"></div>
+            <!-- ທ່ານສາມາດປ່ຽນບ່ອນ src ເປັນ URL ຮູບພາບຜະລິດຕະພັນ Sting ສີເຫຼືອງຂອງທ່ານໄດ້ -->
+            <img src="https://unsplash.com" alt="Sting Gold Energy Drink" class="drink-image">
+        </div>
+    </section>
+
+</body>
+</html>

@@ -1,2 +1,48 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+1. ກຳນົດຂໍ້ມູນຫຼັກຂອງສິນຄ້າ (String Variables)
+brand_name = "Sting"
+slogan = "ສະຕິງ... ພະລັງດີດ ສູ້ບໍ່ຖອຍ!"
+flavor_red = "ສະຕິງ ສະຕໍເບີຣີ (ສີແດງ) ຫອມຫວານ, ຊ່ວຍໃຫ້ຕື່ນຕົວ"
+flavor_yellow = "ສະຕິງ ໂກລ (ສີເຫຼືອງ) ລົດຊາດກົມກ່ອມ, ເພີ່ມພະລັງງານສູງ"
+
+# 2. ຟັງຊັນສ້າງຂໍ້ຄວາມໂຄສະນາ ໂດຍໃຊ້ String Formatting (f-string)
+def generate_ad(customer_group, flavor_choice):
+    # ເລືອກລົດຊາດຕາມທີ່ກຳນົດ
+    selected_flavor = flavor_red if flavor_choice == "red" else flavor_yellow
+    
+    # ສ້າງເນື້ອຫາໂຄສະນາ (Multi-line String)
+    ad_content = f"""
+    ======= 📢 ປະກາດຄວາມດີດຈາກ {brand_name}! =======
+    
+    💥 ສະບາຍດີ ຊາວ {customer_group} ທຸກຄົນ! 💥
+    ມື້ນີ້ເມື່ອຍບໍ? ງ້ວງນອນບໍ? ໝົດແຮງບໍ່? 
+    ໃຫ້ {brand_name} ເປັນໂຕຊ່ວຍຂອງເຈົ້າ!
+    
+    👉 ແນະນຳ: {selected_flavor}
+    ✨ ຄຸນປະໂຫຍດ: ເພີ່ມຄວາມສົດຊື່ນ, ແຂງແຮງ, ພ້ອມລຸຍທຸກສະຖານະການ!
+    
+    🔥 ປະໂຫຍກເດັດ: "{slogan.upper()}"
+    
+    🏪 ຫາຊື້ໄດ້ແລ້ວມື້ນີ້ ທີ່ຮ້ານຄ້າ ແລະ ມິນິມາດໃກ້ບ້ານເຈົ້າ!
+    ===========================================
+    """
+    return ad_content
+
+# 3. ຟັງຊັນປ່ຽນແປງຂໍ້ຄວາມ (String Manipulation) ເພື່ອເຮັດໂປຣໂມຊັ່ນ
+def create_promo(original_ad, discount_percent):
+    # ໃຊ້ .replace() ໃນການແທນທີ່ String ເພື່ອຕື່ມໂປຣໂມຊັ່ນ
+    promo_text = f"\n🔥 ໂປຣໂມຊັ່ນພິເສດ: ຫຼຸດທັນທີ {discount_percent}% ເມື່ອຊື້ 2 ກະປ໋ອງຂຶ້ນໄປ!"
+    modified_ad = original_ad.replace("🏪 ຫາຊື້ໄດ້ແລ້ວມື້ນີ້", promo_text + "\n🏪 ຫາຊື້ໄດ້ແລ້ວມື້ນີ້")
+    return modified_ad
+
+# --- 🎯 运行测试 (ທົດລອງລັນໂຄດ) ---
+
+# ຕົວຢ່າງທີ 1: ໂຄສະນາໃຫ້ກຸ່ມ "ໄວຮຸ່ນນັກສຶກສາ" ທີ່ກຳລັງອ່ານໜັງສືສອບເສັງ (ເລືອກສີແດງ)
+student_ad = generate_ad(customer_group="ໄວຮຸ່ນນັກສຶກສາ ຄົນນອນເດິກ", flavor_choice="red")
+print(student_ad)
+
+# ຕົວຢ່າງທີ 2: ໂຄສະນາໃຫ້ກຸ່ມ "ຄົນເຮັດວຽກ / ໄດເວີ" ພ້ອມເພີ່ມໂປຣໂມຊັ່ນຫຼຸດລາຄາ 15% (ເລືອກສີເຫຼືອງ)
+worker_ad = generate_ad(customer_group="ອ້າຍໆ ໄດເວີ ສົ່ງອາຫານ ແລະ ຄົນເຮັດວຽກກະດຶກ", flavor_choice="yellow")
+promo_worker_ad = create_promo(worker_ad, discount_percent=15)
+print(promo_worker_ad)
